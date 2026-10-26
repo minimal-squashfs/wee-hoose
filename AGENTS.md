@@ -82,6 +82,11 @@ node --test "tests/*.test.mjs"      # all the tests, about a second
 - To see a day or weather without waiting: `?date=2026-12-25&time=21:00&weather=snowy&celebrate=birthday&room=living`.
 - The tests can't show how it looks. Look at it in a browser, at a landscape tablet size
   (about 1000 x 600), by day and by night, before you call a visual change done.
+- If a change alters the picture, retake the README's screenshots in `docs/screenshots/`:
+  1340 x 800, in demo mode, with `?date=2026-10-26&time=13:00` (day.png),
+  `?date=2026-10-26&time=22:10&weather=snowy` (night.png),
+  `?date=2026-10-26&celebrate=birthday&time=16:00&weather=sunny` (birthday.png) and
+  `?room=living&date=2026-12-25&time=20:00` (room.png).
 
 ## House style
 
