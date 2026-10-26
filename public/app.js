@@ -620,7 +620,7 @@ function update() {
   $("banner").textContent = today.map(c => c.words).join("  ·  ");
   $("banner").hidden = !today.length;
   $("note").textContent = !state ? "Can't reach the panel's helper just now."
-    : s.mode === "pretend" ? "Demo mode: not joined up to Home Assistant yet."
+    : s.mode === "pretend" && !PREVIEW ? "Demo mode: not joined up to Home Assistant yet."   // not in previews, so screenshots are clean
     : s.ok === false ? "Home Assistant isn't answering just now." : "";
   $("note").hidden = !$("note").textContent;
 
@@ -668,7 +668,7 @@ $("card").addEventListener("keydown", e => {
   else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
-const demoNote = () => (state?.mode === "pretend" ? `<p class="small">(Demo mode: not joined up to Home Assistant yet.)</p>` : "");
+const demoNote = () => (state?.mode === "pretend" && !PREVIEW ? `<p class="small">(Demo mode: not joined up to Home Assistant yet.)</p>` : "");
 function tone(f, at = 0) { try { const a = tone.ctx ||= new AudioContext(), o = a.createOscillator(), g = a.createGain(); o.frequency.value = f; g.gain.setValueAtTime(.05, a.currentTime + at); g.gain.exponentialRampToValueAtTime(.0001, a.currentTime + at + .12); o.connect(g).connect(a.destination); o.start(a.currentTime + at); o.stop(a.currentTime + at + .13); } catch { /* no sound */ } }
 
 // The lamp: a slider for how bright, or On and Off for a smart plug
