@@ -19,8 +19,6 @@ built-in sun and a weather integration. Anything you haven't got just stays part
 |---|---|---|---|
 | ![The cottage by day](docs/screenshots/day.png) | ![The cottage at night, with snow on the roof](docs/screenshots/night.png) | ![Bunting, balloons and confetti for a birthday](docs/screenshots/birthday.png) | ![Zoomed into the living room](docs/screenshots/room.png) |
 
-*(Screenshots to come.)*
-
 ## What you need
 
 - **Home Assistant**, any recent version, on your home network.
