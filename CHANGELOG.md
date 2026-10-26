@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- The clock stays on one line on 12-hour tablets: AM/PM is small beside the time (on
+  whichever side the language puts it), and the hour has no leading zero (1:05 PM). 24-hour
+  tablets are unchanged.
+- Previews hide the "Demo mode" label, so screenshots come out clean.
+
 ## 0.1.0 – minimal version
 
 The first version: a panel anyone with a basic Home Assistant can use on day one.

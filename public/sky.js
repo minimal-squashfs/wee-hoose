@@ -61,6 +61,17 @@ export function greeting(d = new Date()) {
   return "Sleep well";
 }
 
+// The clock in the tablet's own style, as pieces: [{ text, small }]. A 12-hour clock's AM/PM
+// is small (and on whichever side the language puts it), so the big clock stays on one line,
+// and its hour has no leading zero (1:05 PM); a 24-hour clock keeps it (09:05).
+export function clockParts(d, locale) {
+  const twelve = /^h1[12]$/.test(new Intl.DateTimeFormat(locale, { hour: "numeric" }).resolvedOptions().hourCycle);
+  const parts = new Intl.DateTimeFormat(locale, { hour: twelve ? "numeric" : "2-digit", minute: "2-digit" }).formatToParts(d);
+  const period = i => parts[i]?.type === "dayPeriod";
+  // The space beside AM/PM is small too, or it leaves a big gap
+  return parts.map((p, i) => ({ text: p.value, small: period(i) || (p.type === "literal" && !p.value.trim() && (period(i - 1) || period(i + 1))) }));
+}
+
 // "Sunny, 14°" (or just the one that's known)
 export function weatherWords(w) {
   if (!w) return "";

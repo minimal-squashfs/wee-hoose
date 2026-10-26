@@ -5,7 +5,7 @@ process.env.TZ = "Europe/London";              // the sun by the clock depends o
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { skyPhase, sunAt, weatherFor, weatherWords, greeting, lampsFor, tvOn, WEATHER } from "../public/sky.js";
+import { skyPhase, sunAt, clockParts, weatherFor, weatherWords, greeting, lampsFor, tvOn, WEATHER } from "../public/sky.js";
 import { celebrationsToday, between, CELEBRATIONS, DECOR_NAMES } from "../public/celebrations.js";
 
 const at = (date, time = "12:00") => new Date(`${date}T${time}:00`);
@@ -95,4 +95,14 @@ test("the house looks lived in: lamps on in the evening, off overnight and by da
   assert.equal(tvOn(at("2026-01-01", "20:00"), "night"), true);
   assert.equal(tvOn(at("2026-06-21", "20:00"), "day"), false);              // a light summer evening
   assert.equal(tvOn(at("2026-01-01", "23:00"), "night"), false);
+});
+
+test("the clock follows the tablet's language, with a 12-hour clock's AM/PM kept small", () => {
+  // (browsers put a narrow no-break space before AM/PM; any space will do here)
+  const said = (d, locale) => clockParts(d, locale).map(p => (p.small ? `[${p.text}]` : p.text)).join("").replace(/\s/g, " ");
+  assert.equal(said(at("2026-10-26", "13:05"), "en-GB"), "13:05");
+  assert.equal(said(at("2026-10-26", "09:05"), "en-GB"), "09:05");
+  assert.equal(said(at("2026-10-26", "13:05"), "en-US"), "1:05[ ][PM]");      // no leading zero, and a small space
+  assert.equal(said(at("2026-10-26", "09:05"), "en-US"), "9:05[ ][AM]");
+  assert.match(said(at("2026-10-26", "13:05"), "ko-KR"), /^\[.+\]\[ \]1:05$/);  // before the time, in Korean
 });

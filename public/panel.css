@@ -29,7 +29,8 @@ body {
   color: var(--sky-ink); text-shadow: var(--sky-ink-shadow); pointer-events: none; transition: opacity .4s ease; }
 #header p { margin: 0; }
 #greeting { font-size: var(--greeting-size); font-weight: 500; }
-#clock { font-size: var(--clock-size); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+#clock { font-size: var(--clock-size); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#clock .ampm { font-size: .35em; font-weight: 500; }        /* a 12-hour clock's AM/PM, small beside the time */
 #today, #welcome { font-size: var(--text-size); margin-top: 6px; }
 #weather:not(:empty)::before { content: " · "; }
 #banner { display: inline-block; margin-top: 12px !important; padding: 8px 18px; border-radius: 999px; font-size: var(--text-size); font-weight: 600;

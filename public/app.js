@@ -11,7 +11,7 @@
    To try any day: ?date=2026-12-25&time=21:30&weather=snowy&celebrate=birthday&room=living
    (a preview never changes anything in the house).
    ===================================================================== */
-import { skyPhase, weatherFor, weatherWords, greeting, lampsFor, tvOn } from "./sky.js";
+import { skyPhase, weatherFor, weatherWords, greeting, lampsFor, tvOn, clockParts } from "./sky.js";
 import { celebrationsToday } from "./celebrations.js";
 
 const Q = new URLSearchParams(location.search);
@@ -636,7 +636,14 @@ function update() {
     drawCat();
   }
 }
-function tick() { $("clock").textContent = now().toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" }); }
+function tick() {
+  $("clock").replaceChildren(...clockParts(now()).map(p => {
+    if (!p.small) return p.text;
+    const s = document.createElement("span");
+    s.className = "ampm"; s.textContent = p.text;
+    return s;
+  }));
+}
 
 /* ---------- Cards: what opens when something's tapped ---------- */
 // A card over the house. Focus moves into it (and Tab stays inside), and goes back to
