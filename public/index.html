@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wee Hoose</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#25335d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Wee Hoose">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="panel.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+
+<!-- The cottage, cut away so you can see inside, under a sky that follows the sun and the
+     weather. The controls are things in it: the lamp, the speaker, the bed. -->
+<svg id="house" viewBox="0 150 1500 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A little house">
+  <defs>
+    <radialGradient id="lampGlow"><stop offset="0%" stop-color="#ffd98a" stop-opacity=".75"/><stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g id="sky"></g>
+  <g id="weatherBack"></g>
+  <g id="garden"></g>
+  <g id="building"></g>
+  <g id="weatherFront"></g>
+  <g id="decor"></g>
+  <g id="cat"></g>
+  <g id="overlay"></g>
+</svg>
+
+<header id="header">
+  <p id="greeting">Hello</p>
+  <p id="clock">--:--</p>
+  <p id="today"><span id="date"></span><span id="weather"></span></p>
+  <p id="welcome" hidden></p>
+  <p id="banner" hidden></p>
+  <p id="hint">Tap a room to look inside</p>
+</header>
+
+<button id="whole" hidden>◀ Whole house</button>
+<p id="note" hidden></p>
+<div id="card" class="card-back" hidden></div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<p id="news" class="sr-only" aria-live="polite"></p>
+</body>
+</html>

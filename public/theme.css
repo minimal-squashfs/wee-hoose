@@ -1,0 +1,59 @@
+/* The cosy theme: colours, fonts, sizes, the sky and the house's paint. Restyle the panel by
+   changing this file only; panel.css and app.js use these names. docs/customising.md has more. */
+
+/* The font. To use a different one, change this line and --font below (or delete the line
+   and use a font the tablet already has). */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
+
+:root {
+  --font: "Fredoka", "Avenir Next Rounded", "Nunito", system-ui, sans-serif;
+
+  /* Words over the sky: the big clock and the greeting */
+  --sky-ink: #ffffff;
+  --sky-ink-shadow: 0 2px 12px rgba(20, 30, 60, .45);
+  --clock-size: clamp(56px, 10vw, 150px);
+  --greeting-size: clamp(22px, 3.2vw, 40px);
+  --text-size: clamp(17px, 2vw, 24px);
+
+  /* The cards that open when something's tapped */
+  --card: #fffaf0;
+  --card-ink: #2d2a26;
+  --card-muted: #6d665c;
+  --card-radius: 26px;
+  --card-shadow: 0 18px 50px rgba(0, 0, 0, .3);
+
+  /* Buttons: big and friendly, easy to hit */
+  --button: #ece4d4;
+  --button-ink: #2d2a26;
+  --accent: #2f6f62;           /* the main button on each card, and "on" */
+  --accent-ink: #ffffff;
+  --goodnight: #3b3f73;
+  --goodnight-ink: #ffffff;
+  --button-height: 60px;
+  --button-radius: 999px;
+
+  /* The sky, top to bottom, at each time of day */
+  --sky-day: #7ec4ee, #d6eefc;
+  --sky-dawn: #f2a37a, #f8dcb6;
+  --sky-dusk: #5b5f9e, #f19f72;
+  --sky-night: #0d1634, #25335d;
+  /* ...and under heavy cloud (by day, and by night) */
+  --sky-grey: #8593a3, #c4ccd5;
+  --sky-grey-night: #141a2c, #2a3245;
+
+  /* The house's paint */
+  --brick: #c99a72;
+  --roof: #8a4b3c;
+  --roof-lines: #7a4134;
+  --beams: #8a6448;             /* the floors and outside walls, cut away */
+  --front-door: #2f6f62;
+  --grass: #7dbb6a;
+  --wall-living: #f6dfc0;
+  --wall-kitchen: #fbf0d2;
+  --wall-bedroom: #e3d4f2;
+  --wall-bathroom: #d6ecef;
+
+  /* The cat: a ginger tabby. Try #8a8a8a and #5d5d5d for a grey one. */
+  --cat: #e8a25a;
+  --cat-stripes: #c0662f;
+}

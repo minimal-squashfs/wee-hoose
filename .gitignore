@@ -1,0 +1,11 @@
+# Your own settings and secrets: never on GitHub
+config.jsonc
+secrets/
+.env
+.env.*
+*.token
+
+# Odds and ends
+node_modules/
+*.log
+.DS_Store

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Wee Hoose's icon: the cottage at dusk, lamps lit. The house keeps inside the middle 80%,
+       so Android can crop the icon to a circle (or any shape) without clipping it. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#25335d"/><stop offset="1" stop-color="#5b5f9e"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#ffd98a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sky)"/>
+  <g fill="#ffffff"><circle cx="70" cy="190" r="4"/><circle cx="430" cy="120" r="4"/><circle cx="455" cy="230" r="3"/><circle cx="190" cy="60" r="3"/><circle cx="330" cy="50" r="4"/><circle cx="60" cy="300" r="3"/></g>
+  <circle cx="112" cy="104" r="34" fill="#f5f1d6"/><circle cx="128" cy="92" r="31" fill="#2f3b69"/>
+  <rect y="402" width="512" height="110" fill="#7dbb6a"/>
+  <ellipse cx="256" cy="330" rx="200" ry="120" fill="url(#glow)"/>
+  <g stroke="rgba(58,42,30,.6)" stroke-width="6" stroke-linejoin="round">
+    <rect x="318" y="146" width="36" height="74" fill="#9a5a46"/>
+    <rect x="140" y="236" width="232" height="170" rx="6" fill="#fbf0d2"/>
+    <path d="M112 252 L256 126 L400 252 Z" fill="#8a4b3c"/>
+    <rect x="228" y="318" width="56" height="88" rx="5" fill="#2f6f62"/>
+    <rect x="160" y="276" width="52" height="48" rx="4" fill="#ffd98a"/>
+    <rect x="300" y="276" width="52" height="48" rx="4" fill="#ffd98a"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="5"><path d="M186 276 v48 M160 300 h52 M326 276 v48 M300 300 h52"/></g>
+  <circle cx="273" cy="364" r="4.5" fill="#e7c98c"/>
+  <circle cx="256" cy="200" r="20" fill="#f3e3c3" stroke="#7a4134" stroke-width="5"/>
+</svg>

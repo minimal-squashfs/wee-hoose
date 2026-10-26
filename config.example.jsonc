@@ -1,0 +1,71 @@
+// Wee Hoose's settings. Copy this file to config.jsonc and change it to suit your home:
+//   cp config.example.jsonc config.jsonc
+// config.jsonc is gitignored, so your entities never end up on GitHub.
+//
+// Every entity is optional. Leave one as "" (or delete the line) and its part of the panel
+// hides itself. If an entity doesn't exist in Home Assistant, its card hides too, so
+// nothing breaks. Find your entity ids in Home Assistant under Settings > Devices & services
+// > Entities.
+//
+// The Home Assistant token is NOT kept here. See "The token" in README.md.
+{
+  // Where Home Assistant is, as the computer running this panel sees it. Leave it as "" to run
+  // in demo mode, with a pretend house, which is handy for trying the panel out.
+  "home_assistant_url": "http://homeassistant.local:8123",
+
+  // A line under the clock. "" for none.
+  "welcome": "Welcome! Make yourself at home.",
+
+  // A cat that wanders round the house. false if you'd rather not.
+  "cat": true,
+
+  // ---------- The ambient layer: no smart devices needed ----------
+
+  // The sun, for the day and night sky. Home Assistant has it built in.
+  "sun": "sun.sun",
+
+  // Any weather entity, for the rain, snow, clouds and the temperature in the header.
+  // Home Assistant's own Met.no integration makes weather.forecast_home.
+  "weather": "weather.forecast_home",
+
+  // Any calendar entity, for birthday confetti.
+  "calendar": "calendar.birthdays",
+  // Which of today's events count as birthdays: those with this in their title (any case).
+  // Use "" if the calendar has nothing but birthdays, so every event counts.
+  // Each birthday's title is shown on the panel, so keep it to what guests can see.
+  "birthday_match": "birthday",
+
+  // ---------- The controls ----------
+
+  // The living room's lamp: tap it for on, off and brightness. A light group works too, and
+  // so does a switch (a smart plug on a lamp), which gets on and off only. Without one, the
+  // lamp just comes on in the evenings by itself.
+  "light": {
+    "entity": "light.living_room",
+    "name": "Living room light"
+  },
+
+  // The speaker on the living room shelf: tap it for play, pause, volume and a few
+  // favourites. Without one, there's no speaker in the picture.
+  "speaker": {
+    "entity": "media_player.speaker",
+    "name": "Music",
+    // Each favourite is a button. Two kinds:
+    //   { "name": ..., "media_content_id": ..., "media_content_type": ... } plays something
+    //     (for a radio stream, the stream's address and "music")
+    //   { "name": ..., "source": ... } picks one of the player's sources (Sonos favourites,
+    //     Spotify Connect and some others show up as sources)
+    // What works depends on your speaker; Developer tools > Actions > media_player.play_media
+    // in Home Assistant is the place to try one first.
+    "favourites": [
+      { "name": "Radio", "media_content_id": "https://stream.example.com/radio.mp3", "media_content_type": "music" },
+      { "name": "Chill", "source": "Chill playlist" }
+    ]
+  },
+
+  // Tapping the bed says goodnight: it turns off the light and pauses the speaker above. To do more
+  // (other lights, the heating, dim the tablet), make a Home Assistant script and name it
+  // here; it runs after the rest. "" for none. With no light, speaker or script, the bed is
+  // just a bed.
+  "goodnight_script": ""
+}

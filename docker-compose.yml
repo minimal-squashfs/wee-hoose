@@ -1,0 +1,16 @@
+# Optional: runs the panel in Docker instead of with Node directly.
+#   docker compose up -d
+# It reads config.jsonc and secrets/ha-token from this folder (both gitignored), so set
+# those up first (see README.md). After changing the config: docker compose restart
+services:
+  wee-hoose:
+    image: node:24-alpine
+    working_dir: /app
+    command: node server.mjs
+    volumes:
+      - .:/app:ro
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
