@@ -2,7 +2,7 @@
 
 A wee hoose for your hallway tablet, joined up with [Home Assistant](https://www.home-assistant.io/).
 
-It's a little pixel cottage, cut away so you can see into its four rooms. The sky behind it
+It's a little illustrated cottage, cut away so you can see into its four rooms. The sky behind it
 follows the real sun, from dawn through to a starry night. The real weather falls on it, with
 rain on the windows and snow settling on the roof, and the tree in the garden changes with the
 seasons. In the evening the lamps come on room by room. A cat wanders about, and the house

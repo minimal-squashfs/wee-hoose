@@ -5,7 +5,7 @@ it up is in `README.md`.
 
 ## What it is
 
-A wee hoose for your hallway tablet, joined up with Home Assistant: a pixel cottage, cut away
+A wee hoose for your hallway tablet, joined up with Home Assistant: an illustrated cottage, cut away
 to show four rooms, under a sky that follows the sun and the weather. Its lamps come on in the
 evening, a cat wanders about, and it dresses up for celebrations. The house is also the
 controls: guests tap a room to zoom in, then tap the lamp, the speaker or the bed (Goodnight).

@@ -1,6 +1,6 @@
 {
   "name": "wee-hoose",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A wee hoose for your hallway tablet, joined up with Home Assistant.",
   "private": true,
   "type": "module",

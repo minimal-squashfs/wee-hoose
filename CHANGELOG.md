@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 – clock and screenshot tidy-ups
 
 - The clock stays on one line on 12-hour tablets: AM/PM is small beside the time (on
   whichever side the language puts it), and the hour has no leading zero (1:05 PM). 24-hour
@@ -11,7 +11,7 @@
 
 The first version: a panel anyone with a basic Home Assistant can use on day one.
 
-- **The house:** a pixel cottage cut away to show four rooms (living room, kitchen, bedroom
+- **The house:** an illustrated cottage cut away to show four rooms (living room, kitchen, bedroom
   and bathroom), with a garden, a picket fence and a tree. Tap a room to zoom in, and tap
   things in it.
 - **Ambient layer:** a sky that follows `sun.sun` (dawn, day, dusk and a starry night), or,
